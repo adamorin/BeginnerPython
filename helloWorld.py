@@ -56,3 +56,25 @@ elif dist < 300:
     print("drive")
 else:
     print("fly")
+    
+    
+#Functions
+def MakeStory(noun: str, verb: str, adj: str):
+    """Prints a funny story using inputs"""
+    story = """Once upon a time there was a {0}, and it was {2}. Well one day the big bad wolf came to {1} all over the {0}, and {0} was so sad. But whatever.""".format(noun, verb, adj)
+    print(story)
+    
+MakeStory("cow", "poop", "sexy")    
+    
+
+#Lists
+def MakeShoppingList():
+    item = input("First item:")
+    shoppingList = [item]
+    while item != "":
+        item = input("Next item: ")
+        shoppingList.append(item)
+    for item in shoppingList:
+        print(item)
+#MakeShoppingList()
+        
