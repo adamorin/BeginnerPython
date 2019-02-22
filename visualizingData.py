@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as mp
 import numpy
+from scipy import stats
 
 def makeNewSeries(ID, times, volts, kwh):
     dic = {"Time": times, "Voltage": volts, "KWH": kwh}
@@ -42,3 +43,12 @@ for f in frames:
     mp.plot(f["Time"], f["Voltage"] ) 
 mp.show()     
         
+#Only first read
+onePoint = data[data.Time == '1-1-2019 0:00:00']
+print(onePoint)
+
+z = stats.zscore(onePoint.drop(['Time'], axis=1))
+print(z)
+print("big z:")
+print(numpy.where(z < -1.5))
+print(onePoint.drop(['Time'], axis=1))
